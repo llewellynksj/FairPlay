@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Add child
+    </button>
+
+    <h1 class="title">Family</h1>
+
+    <div class="container">
+        {% if not context.queryset %}
+            <h1>Nothing to show</h1>
+        {% else %}
+            {#tabs#}
+            {% include 'family/services/tabs.html' %}
+
+            {#content inside tabs#}
+            {% include 'family/services/tabs-content.html' %}
+
+        {% endif %}
+    </div>
+
+    {% include 'family/services/modal.html' %}
+
+{% endblock %}
