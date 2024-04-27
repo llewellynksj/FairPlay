@@ -1,0 +1,79 @@
+{% extends 'household_base.html' %}
+
+{% block material %}
+
+<!-- Meal Ideas -->
+<div class="p-4 food-container">
+  <div class="d-flex flex-md-row flex-column m-2">
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">It's tough coming up with meal plans each week, so help out by adding some ideas of
+        different, or favourite, recipes.</p>
+
+      <h4>Meal Ideas</h4>
+      <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          {{ task_form.as_p }}
+          <input type="submit" name="task_submit" value="Add" class="btn btn-secondary mb-4">
+        </form>
+      </div>
+
+      {% if queryset %}
+      <ul class="list-group">
+        {% for task in queryset %}
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{task.description }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_task' task.pk %}">Delete</a>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <p class="mt-3">You haven't added any ideas yet...</p>
+      {% endif %}
+    </div>
+
+    <!-- Page seperator -->
+    <div class="divider d-block d-md-none">
+      <div class="divider-inner"></div><span><i class="fa-thin fa-circle-heart"></i></span>
+    </div>
+
+    <!-- Shopping List -->
+    <div class="col-sm-12 col-md-6 px-3 mw-50">
+      <p class="text-left">Noticed we're running low of anything?<br>
+        Add it to the shopping list.</p>
+      <h4 class="mt-4">Shopping List</h4>
+
+      <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          {{ shopping_form.as_p }}
+          <input type="submit" name="shopping_submit" value="Add" class="btn btn-secondary mb-4">
+        </form>
+      </div>
+      {% if shopping_list %}
+      <ul class="list-group">
+        {% for item in shopping_list %}
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <span> {{item.item }}</span>
+            <div class="d-flex justify-content-end">
+              <a class="px-2" href="{% url 'delete_shopping_item' item.pk %}">Remove</a>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="mt-3">Your shopping list is empty...</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
