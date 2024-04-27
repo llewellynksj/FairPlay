@@ -40,13 +40,13 @@
                             <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Household</a>
+                            <a class="nav-link" href="{% url 'household' %}">Household</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Family</a>
+                            <a class="nav-link" href="{% url 'family' %}"">Family</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Team</a>
+                            <a class="nav-link" href="{% url 'team' %}">Team</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item">
