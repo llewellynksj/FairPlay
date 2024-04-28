@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('admin/', admin.site.urls),
+    path('household/', include('household.urls')),
+    path('family/', include('family.urls')),
+    path('team/', include("team.urls")),
 ]

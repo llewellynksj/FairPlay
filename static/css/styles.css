@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Kaku+Gothic+New&display=swap');
+
 
 * {
     margin: 0;
@@ -7,12 +8,34 @@
   
 body {
     min-height: 100vh;
-    font-family: "Zen Kaku Gothic Antique";
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    position: relative;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.wrapper {
+    min-height: calc(100vh - (footer height + footer padding));
+    position: relative;
+    padding-bottom: 16em; 
+    background-color: #ff8c04;
+    background-image: linear-gradient(180deg, #ff8c04 36%, #b0d8eb 72%);
+
+}
+
+.project-title {
+    font-family: 'Prompt', sans-serif;
+    letter-spacing: 2px;
+    font-size: 3em;
 }
 
 header {
     width: 100%;
     background: #B0D8EB;
+}
+
+.nav-link, .navbar-nav{
+    color: #fff;
 }
 
 .navbar {
@@ -33,6 +56,7 @@ header {
     color: #ffffff;
     text-align: center;
     font-family: "Zen Kaku Gothic Antique";
+    margin: 50px 100px;
 }
 
 .card {
@@ -56,17 +80,19 @@ header {
 }
 
 .home-section3 {
-    background: #B0D8EB;
+    padding: 80px 0;
+    color: #000;
 }
 
 #home-section3 {
-    color: #FFF;
+    color: #000;
 }
 
 .chart {
     border-radius: 20px;
-  box-shadow: 0px 2px 6px 0px rgba(13, 10, 44, 0.08);
-  background: #F5F5F5;
+    box-shadow: 0px 2px 6px 0px rgba(13, 10, 44, 0.08);
+    background: #F5F5F5;
+    max-width: 600px;
 }
 
 #chart-goals {
@@ -156,43 +182,25 @@ header {
   
 /* Footer */
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     background: #B0D8EB;
     align-items: center;
     padding: 1em;
     width: 100%;
 }
 
-.quotes {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-}
-  
-.quotes p {
-    font-size: 1em;
-}
-  
-.team {
-    text-align: center;
-}
-  
-.links {
-    display: flex;
-    text-align: center;
-    width: 100%;
-}
-  
-.links a {
-    margin: auto;
+.footer-col p {
+    margin: 0;
 }
   
 .copyright {
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin: 1em auto 0;
+    margin: 0;
 }
 
 /* Family styles */

@@ -23,71 +23,77 @@
 </head>
 
 <body class="container-fluid p-0">
+    <div class="wrapper">
 
-    <header>
-        <div id="navigation-opacity">
-            <nav class="navbar navbar-expand-sm">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href={% url 'home:home' %}>
-                        <img src="{% static 'images/houselogo_white2.png' %}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home:home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'household' %}">Household</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'family' %}"">Family</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'team' %}">Team</a>
-                        </li>
-                        {% if user.is_authenticated %}
+        <header>
+            <div id="navigation-opacity">
+                <nav class="navbar navbar-expand-sm">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href={% url 'home:home' %}>
+                            <img src="{% static 'images/houselogo_white2.png' %}" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                                   href="{% url 'account_logout' %}">Sign Out</a>
+                                <a class="nav-link" aria-current="page" href="{% url 'home:home' %}">Home</a>
                             </li>
-                            {% else %}
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-                                   href="{% url 'account_login' %}">Sign In</a>
+                                <a class="nav-link" href="{% url 'household' %}">Household</a>
                             </li>
-                            {% endif %}
-                        </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'family:family' %}">Family</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'team:team' %}">Team</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                    href="{% url 'account_logout' %}">Sign Out</a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                    href="{% url 'account_login' %}">Sign In</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+                </nav>
+            </div>
+        </header>
 
-    <main class="">
-        {% block content %}
-        {#    content goes here#}
-        {% endblock %}
-    </main>
+        <main class="">
+            {% block content %}
+            {#    content goes here#}
+            {% endblock %}
+        </main>
+</div>
 
 <footer>
-    <div class="quotes">
-        <h3>Quotes</h3>
-        <p>In a busy and overwhelming world, let's do FairPlay!</p>
-        <p>It always seems impossible before it’s done.</p>
-    </div>
-    <div class="team">
-        <p>Team: TechTonicTitans</p>
-    </div>
-    <div class="links">
-        <a href="https://cloud.google.com/">Google Cloud</a>
-        <a href="https://www.trustinsoda.com/">Soda Social</a>
-        <a href="https://codeinstitute.net/">Code Institute</a>
-    </div>
-    <div class="copyright">
-        <p>Copyright © 2024 FairPlay</p>
+    <hr>
+    <div class="row justify-content-between">
+        <div class="footer-col col-4">
+            <p><em>In a busy and overwhelming world, let's play fair!</em></p>
+            <p><em>It always seems impossible before it’s done.</em></p>
+        </div>
+
+        <div class="footer-col col-4 d-flex justify-content-center">
+            <p>Copyright © 2024 FairPlay</p>
+        </div>
+
+        <div class="footer-col d-flex flex-column col-4 align-items-end">
+            <p>Created by TechTonicTitans</p>
+            <a href="https://cloud.google.com/">Google Cloud</a>
+            <a href="https://www.trustinsoda.com/">Soda Social</a>
+            <a href="https://codeinstitute.net/">Code Institute</a>
+         </div>
+    
+        
     </div>
 
 </footer>
