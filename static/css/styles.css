@@ -17,11 +17,17 @@ body {
 .wrapper {
     min-height: calc(100vh - (footer height + footer padding));
     position: relative;
-    padding-bottom: 16em; 
-    background-color: #ff8c04;
-    background-image: linear-gradient(180deg, #ff8c04 36%, #b0d8eb 72%);
-
+    padding-bottom: 16em;
 }
+
+.color-bg {
+    background: linear-gradient(180deg, #B0D8EB 0%, #BAE5C2 24.5%, #FACC75 43%, #FFB732 62.5%, rgba(255, 150, 101, 0.90) 82.5%, #FF8C04 100%);
+}
+
+.blue {
+    background-color: #B0D8EB;
+}
+
 
 .project-title {
     font-family: 'Prompt', sans-serif;
@@ -35,7 +41,7 @@ header {
 }
 
 .nav-link, .navbar-nav{
-    color: #fff;
+    color: #000;
 }
 
 .navbar {
@@ -49,11 +55,11 @@ header {
 }
 
 #section-h3 {
-    color: #ffffff;
+    color: #fff;
 }
 
 #home-section1 {
-    color: #ffffff;
+    color: #fff;
     text-align: center;
     font-family: "Zen Kaku Gothic Antique";
     margin: 50px 100px;
@@ -215,6 +221,22 @@ footer {
 }
 
 /* Household Styles */
+
+.household-wrapper {
+    background: linear-gradient(180deg, #B0D8EB 0%, #BAE5C2 24.5%, #FACC75 43%, #FFB732 62.5%, rgba(255, 150, 101, 0.90) 82.5%, #FF8C04 100%);
+}
+
+.household-link {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.household-link:hover {
+    background-color: #fff;
+    color: #FF8C04;
+}
 
 /* Page divider */
 /* Code adapted from Isabel C CodePen 'Pure CSS Horizontal Divider With Star Icon':

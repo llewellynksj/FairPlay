@@ -2,25 +2,30 @@
 {% load static %}
 {% block content %}
 
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Add child
-    </button>
+    <div class="color-bg">
 
-    <h1 class="title">Family</h1>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add child
+        </button>
 
-    <div class="container">
-        {% if not context.queryset %}
-            <h1>Nothing to show</h1>
-        {% else %}
-            {#tabs#}
-            {% include 'family/services/tabs.html' %}
+        <h1 class="title">Family</h1>
 
-            {#content inside tabs#}
-            {% include 'family/services/tabs-content.html' %}
+        <div class="container">
+            {% if not context.queryset %}
+                <h1>Nothing to show</h1>
+            {% else %}
+                {#tabs#}
+                {% include 'family/services/tabs.html' %}
 
-        {% endif %}
+                {#content inside tabs#}
+                {% include 'family/services/tabs-content.html' %}
+
+            {% endif %}
+        </div>
+
+
+        {% include 'family/services/modal.html' %}
+
     </div>
-
-    {% include 'family/services/modal.html' %}
 
 {% endblock %}
