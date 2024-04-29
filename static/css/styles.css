@@ -18,6 +18,7 @@ body {
     min-height: calc(100vh - (footer height + footer padding));
     position: relative;
     padding-bottom: 16em;
+    background-color: #B0D8EB;
 }
 
 .color-bg {
@@ -41,7 +42,7 @@ header {
 }
 
 .nav-link, .navbar-nav{
-    color: #000;
+    color: #fff;
 }
 
 .navbar {
