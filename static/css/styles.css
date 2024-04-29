@@ -15,7 +15,7 @@ body {
 }
 
 .wrapper {
-    min-height: calc(100vh - (footer height + footer padding));
+    min-height: calc(100vh - (600px));
     position: relative;
     padding-bottom: 16em;
     background-color: #B0D8EB;
