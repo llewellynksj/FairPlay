@@ -64,7 +64,7 @@ header {
     color: #fff;
     text-align: center;
     font-family: "Zen Kaku Gothic Antique";
-    margin: 50px 100px;
+    margin: 50px 40px;
 }
 
 .card {
@@ -286,5 +286,15 @@ footer {
     font-size: 30px;
 }
 
+@media (min-width: 768px) {
+    #home-section1 {
+        margin: 50px 100px;
+    }   
+}
 
+@media (min-width: 1200px) {
+    #home-section1 {
+        margin: 50px 180px;
+    }   
+}
 
