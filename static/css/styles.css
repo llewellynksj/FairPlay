@@ -43,6 +43,7 @@ header {
 
 .nav-link, .navbar-nav{
     color: #fff;
+    font-weight: lighter;
 }
 
 .navbar {
