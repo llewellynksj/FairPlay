@@ -143,9 +143,8 @@ header {
 }
   
 .team-wrapper h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #fff;
-    font-size: 52px;
+    font-size: 48px;
     margin-bottom: 60px;
     text-align: center;
 }
@@ -212,12 +211,6 @@ footer {
 }
 
 /* Family styles */
-.title {
-  font-size: 5em;
-  text-align: center;
-  padding: 0.5em;
-}
-
 .tab_content {
   padding: 3em;
 }
