@@ -3,10 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.views import View, generic
 from django.urls import reverse_lazy
-from .models import Task, Shopping, Bin, Bins
+from .models import Task, Shopping, Bins
 from .forms import AddTaskForm, AddShoppingForm, AddBinDetailsForm, AddToDoForm
 
 
+@login_required
 def display_household(request):
     return render(request, 'hh/household.html', {})
 
